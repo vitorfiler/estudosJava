@@ -1,12 +1,30 @@
 package com.estudos.vitinho.Model;
 
-public class Aluno {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Aluno")
+public class Aluno {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@Column(name="nome")
 	private String nome;
+	
+	@Column(name="ra")
 	private String ra;
+	
+	@Column(name="cpf")
 	private String cpf;
+	
+	@Column(name="Idade")
 	private int idade;
 	
 	public Long getId() {
@@ -49,5 +67,8 @@ public class Aluno {
 		this.idade = idade;
 	}
 	
-	
+	public Aluno() {
+		super();
+		// TODO Auto-generated constructor stub
+	}	
 }
